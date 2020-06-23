@@ -1,0 +1,25 @@
+
+h3 {
+  border-left: solid .25em #000000;
+  padding-left: .5em;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+
+mat-radio-group {
+  div {
+    margin-bottom: .5em;
+  }
+
+  mat-radio-button {
+    margin-left: .75em;
+  }
+}

@@ -1,0 +1,47 @@
+<h3><span>Period 1</span> Parameters</h3>
+
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Inital Balance</mat-label>
+    <input matInput placeholder="$5,000" required>
+    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Interest Rate</mat-label>
+    <input matInput placeholder="4%" required>
+    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Contributions</mat-label>
+    <input matInput placeholder="$500" required>
+    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+
+  <mat-radio-group aria-label="Select an option">
+    <div><mat-label>Contribution Frequency</mat-label></div>
+    <mat-radio-button value="1">Monthly</mat-radio-button>
+    <mat-radio-button value="2">Quarterly</mat-radio-button>
+    <mat-radio-button value="3">Yearly</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Investment Period</mat-label>
+    <input matInput placeholder="5" required>
+    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+
+  <mat-radio-group aria-label="Select an option">
+    <div><mat-label>Period Classification</mat-label></div>
+    <mat-radio-button value="1">Month(s)</mat-radio-button>
+    <mat-radio-button value="2">Quarter(s)</mat-radio-button>
+    <mat-radio-button value="3">Year(s)</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-radio-group aria-label="Select an option">
+    <div><mat-label>Compound Frequency</mat-label></div>
+    <mat-radio-button value="1">Daily</mat-radio-button>
+    <mat-radio-button value="2">Monthly</mat-radio-button>
+    <mat-radio-button value="3">Quarterly</mat-radio-button>
+    <mat-radio-button value="4">Yearly</mat-radio-button>
+  </mat-radio-group>
+</form>

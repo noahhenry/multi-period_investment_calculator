@@ -17,6 +17,10 @@ let frequencies = {
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+  public contributionFrequencySelection: number;
+  public periodClassificationSelection: string;
+  public compoundFrequencySelection: number;
+
   period: Period = {
     id: 1,
     initialBalance: 0,

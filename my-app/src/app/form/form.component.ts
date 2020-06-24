@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Period } from '../period'
+import { PERIODS } from '../mock-periods'
 
 // Compounding Frequencies:
 let frequencies = {

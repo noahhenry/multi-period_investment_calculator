@@ -8,5 +8,5 @@ import { ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'Multi-period Investment Calculator';
 }

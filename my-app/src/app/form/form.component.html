@@ -17,11 +17,11 @@
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
 
-  <mat-radio-group name="contributionFrequency" [(ngModel)]="contributionFrequencySelection" aria-label="Select an option">
+  <mat-radio-group name="contributionFrequency" [(ngModel)]="contributionFrequencySelection" (change)="updateContributionFrequency(contributionFrequencySelection)" aria-label="Select an option">
     <div><mat-label>Contribution Frequency</mat-label></div>
-    <mat-radio-button value="1">Monthly</mat-radio-button>
-    <mat-radio-button value="2">Quarterly</mat-radio-button>
-    <mat-radio-button value="3">Yearly</mat-radio-button>
+    <mat-radio-button [value]="1">Monthly</mat-radio-button>
+    <mat-radio-button [value]="2">Quarterly</mat-radio-button>
+    <mat-radio-button [value]="3">Yearly</mat-radio-button>
   </mat-radio-group>
 
   <mat-form-field appearance="fill">
@@ -30,22 +30,22 @@
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
 
-  <mat-radio-group name="periodClassifycation" [(ngModel)]="periodClassificationSelection" aria-label="Select an option">
+  <mat-radio-group name="periodClassifycation" [(ngModel)]="periodClassificationSelection" (change)="updatePeriodClassificationSelection(periodClassificationSelection)" aria-label="Select an option">
     <div><mat-label>Period Classification</mat-label></div>
-    <mat-radio-button value="1">Month(s)</mat-radio-button>
-    <mat-radio-button value="2">Quarter(s)</mat-radio-button>
-    <mat-radio-button value="3">Year(s)</mat-radio-button>
+    <mat-radio-button [value]="1">Month(s)</mat-radio-button>
+    <mat-radio-button [value]="2">Quarter(s)</mat-radio-button>
+    <mat-radio-button [value]="3">Year(s)</mat-radio-button>
   </mat-radio-group>
 
-  <mat-radio-group name="compoundFrequency" [(ngModel)]="compoundFrequencySelection" aria-label="Select an option">
+  <mat-radio-group name="compoundFrequency" [(ngModel)]="compoundFrequencySelection" (change)="updateCompoundFrequency(compoundFrequencySelection)" aria-label="Select an option">
     <div><mat-label>Compound Frequency</mat-label></div>
-    <mat-radio-button value="1">Daily</mat-radio-button>
-    <mat-radio-button value="2">Monthly</mat-radio-button>
-    <mat-radio-button value="3">Quarterly</mat-radio-button>
-    <mat-radio-button value="4">Yearly</mat-radio-button>
+    <mat-radio-button [value]="1">Daily</mat-radio-button>
+    <mat-radio-button [value]="2">Monthly</mat-radio-button>
+    <mat-radio-button [value]="3">Quarterly</mat-radio-button>
+    <mat-radio-button [value]="4">Yearly</mat-radio-button>
   </mat-radio-group>
 </form>
 
-<p>Contribution Frequency Selection: {{contributionFrequencySelection}}</p>
-<p>Period Classifycation Selection: {{periodClassificationSelection}}</p>
-<p>Compound Frequency Selection: {{compoundFrequencySelection}}</p>
+
+<br>
+<p>Period Object:<br>{{ period | json }}</p>

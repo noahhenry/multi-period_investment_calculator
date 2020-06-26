@@ -83,7 +83,7 @@ const PERIOD_RESULT_DATA: PeriodResult[] = [
   styleUrls: ['./data-results.component.scss']
 })
 export class DataResultsComponent implements OnInit {
-  displayedColumns: string[] = ["period", "balance", "contributions", "interest-earned"];
+  displayedColumns: string[] = ["period", "contributions", "interest-earned", "balance"];
   dataSource = PERIOD_RESULT_DATA;
 
   constructor() { }

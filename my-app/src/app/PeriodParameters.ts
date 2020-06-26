@@ -1,4 +1,4 @@
-export interface Period {
+export interface PeriodParameters {
   id: number;
   initialBalance: number;
   interestRate: number;

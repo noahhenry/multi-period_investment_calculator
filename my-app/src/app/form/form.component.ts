@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Period } from '../period'
+import { PeriodParameters } from '../PeriodParameters'
 import { PERIODS } from '../mock-periods'
 
 // Compounding Frequencies:
@@ -30,7 +30,7 @@ export class FormComponent implements OnInit {
 
   periods = PERIODS;
 
-  period: Period = {
+  period: PeriodParameters = {
     id: 1,
     initialBalance: 0,
     interestRate: 0.06,

@@ -1,4 +1,4 @@
-import { Period } from './period';
+import { PeriodParameters } from './PeriodParameters';
 
 // Compounding Frequencies:
 let frequencies = {
@@ -8,7 +8,7 @@ let frequencies = {
   yearly: 1
 }
 
-export const PERIODS: Period[] = [
+export const PERIODS: PeriodParameters[] = [
   {
     id: 1,
     initialBalance: 0,

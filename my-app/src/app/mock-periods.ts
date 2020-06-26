@@ -1,4 +1,4 @@
-import { PeriodParameters } from './PeriodParameters';
+import { PeriodParameters } from './periodparameters';
 
 // Compounding Frequencies:
 let frequencies = {

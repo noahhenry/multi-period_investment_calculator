@@ -1,6 +1,25 @@
-h1 {
-  font-size: 3em;
-  line-height: normal;
-  font-weight: bold;
+.wrapper {
+  // content constraints
+  max-width: 90rem;
+  margin-left: auto;
+  margin-top: 5em;
+  margin-right: auto;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3em;
+  grid-auto-rows: minmax(100px, auto);
+
+  h1 {
+    font-size: 3em;
+    line-height: normal;
+    font-weight: bold;
+  }
+
+  .add-period-button-wrapper {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
 }
 

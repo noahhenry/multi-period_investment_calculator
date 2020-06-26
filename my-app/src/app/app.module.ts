@@ -12,7 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { DataResultsComponent } from './data-results/data-results.component'; // my component
 
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { MatTableModule } from '@angular/material/table'
     MatInputModule,
     MatFormFieldModule,
     MatRadioModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,7 +28,7 @@ export class FormComponent implements OnInit {
   public periodClassificationSelection: number;
   public compoundFrequencySelection: number;
 
-  flag: any;
+  periods = PERIODS;
 
   period: Period = {
     id: 1,

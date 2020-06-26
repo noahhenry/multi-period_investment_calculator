@@ -12,21 +12,21 @@ export const PERIODS: Period[] = [
   {
     id: 1,
     initialBalance: 0,
-    interestRate: 0.06,
-    contributionAmount: 500,
+    interestRate: 0.08,
+    contributionAmount: 2500,
     contributionFrequency: frequencies.monthly,
     periodLength: 2,
-    periodClassification: "Year(s)",
+    periodClassification: "year(s)",
     compoundFrequency: frequencies.monthly
   },
   {
     id: 2,
     initialBalance: 0,
     interestRate: 0.08,
-    contributionAmount: 1500,
+    contributionAmount: 4000,
     contributionFrequency: frequencies.monthly,
-    periodLength: 4,
-    periodClassification: "Year(s)",
+    periodLength: 1,
+    periodClassification: "year(s)",
     compoundFrequency: frequencies.quarterly
   }
 ];

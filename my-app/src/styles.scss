@@ -2,16 +2,16 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-
+  // content constraints
   max-width: 90rem;
   margin-left: auto;
   margin-top: 5em;
   margin-right: auto;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3em;
+  grid-auto-rows: minmax(100px, auto);
 }

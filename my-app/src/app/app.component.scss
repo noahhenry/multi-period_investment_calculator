@@ -7,7 +7,7 @@
 
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 3em;
+  // grid-gap: 3em;
   grid-auto-rows: minmax(100px, auto);
 
   h1 {
@@ -16,10 +16,10 @@
     font-weight: bold;
   }
 
-  .add-period-button-wrapper {
-    display: grid;
-    align-content: center;
-    justify-content: center;
-  }
+  // .add-period-button-wrapper {
+  //   display: grid;
+  //   align-content: center;
+  //   justify-content: center;
+  // }
 }
 

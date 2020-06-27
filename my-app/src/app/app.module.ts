@@ -14,13 +14,15 @@ import { DataResultsComponent } from './data-results/data-results.component'; //
 
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { PeriodsComponent } from './periods/periods.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    DataResultsComponent
+    DataResultsComponent,
+    PeriodsComponent
   ],
   imports: [
     BrowserModule,

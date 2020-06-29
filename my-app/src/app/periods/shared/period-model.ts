@@ -4,5 +4,5 @@ import { PeriodResult } from './period-results.model';
 export interface Period {
   id: number;
   periodParameters: PeriodParameters;
-  periodResults: PeriodResult[];
+  periodResult: PeriodResult;
 }

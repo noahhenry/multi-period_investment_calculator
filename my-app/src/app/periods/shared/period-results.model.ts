@@ -10,7 +10,7 @@ export interface Rollover {
 
 export interface PeriodResult {
   id: number;
-  initialBalance: number; // todo: might be able to delete?
+  initialBalance: number;
   rollovers: Rollover[];
   totalContributionsForPeriod: number;
   totalInterestEarnedForPeriod: number;

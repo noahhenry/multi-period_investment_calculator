@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Period } from '../periods/shared/period-model';
+// import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-data-results',
@@ -9,8 +10,8 @@ import { Period } from '../periods/shared/period-model';
 })
 export class DataResultsComponent implements OnInit {
   @Input() periods: Period[];
-
-  selectedPeriod: Period;
+  @Input() selectedPeriod: Period;
+  @Output() selectedPeriodChange = new EventEmitter<Period>();
 
   displayedColumns: string[] = ["period", "contributions", "interest-earned", "balance"];
 
@@ -20,7 +21,9 @@ export class DataResultsComponent implements OnInit {
   }
 
   onSelect(period: Period): void {
-    this.selectedPeriod = period
+    console.log(period);
+    this.selectedPeriod = period;
+    this.selectedPeriodChange.emit(period)
   }
 
 }

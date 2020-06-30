@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Period } from './shared/period-model'
 // import { PERIODS } from './shared/mock-periods'

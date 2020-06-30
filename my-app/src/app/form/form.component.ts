@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { PeriodParameters } from '../period-parameters'
-// import { Period } from '../periods/shared/period-model';
+import { Period } from '../periods/shared/period-model';
 
 
 // Compounding Frequencies:
@@ -25,7 +25,7 @@ let periodClassifications = {
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  // @Input() period: Period;
+  @Input() selectedPeriod: Period;
 
   public contributionFrequencySelection: number;
   public periodClassificationSelection: number;

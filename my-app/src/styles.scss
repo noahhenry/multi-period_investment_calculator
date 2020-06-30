@@ -2,3 +2,12 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 html, body { height: 100%; }
+
+tr.mat-row:hover {
+  cursor: pointer;
+  background: #b4b4b433;
+}
+
+.row-highlight {
+  background: #42A948; /* green */
+}

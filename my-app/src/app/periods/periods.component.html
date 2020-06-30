@@ -1,10 +1,10 @@
-<app-data-results [periods]="periods"></app-data-results>
+<app-data-results [periods]="periods" [(selectedPeriod)]="selectedPeriod"></app-data-results>
 <div class="add-period-button-wrapper">
   <button mat-fab color="accent" aria-label="Add new period icon button">
     <mat-icon>add</mat-icon>
   </button>
 </div>
 
-<app-form></app-form>
+<app-form [selectedPeriod]="selectedPeriod"></app-form>
 
-<p>Selected Period: {{selectedPeriod}}</p>
+<p>Selected Period: {{selectedPeriod | json}}</p>

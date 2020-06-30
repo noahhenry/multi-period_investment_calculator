@@ -1,5 +1,3 @@
-import { PeriodParameters } from '../shared/period-parameters.model';
-// import { PeriodResult } from '../shared/period-results.model'
 import { Period } from './period-model';
 
 // Compounding Frequencies:

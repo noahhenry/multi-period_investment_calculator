@@ -18,6 +18,10 @@ export class PeriodsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPeriods();
+
+    if(this.periods.length) {
+      this.selectedPeriod = this.periods[0]
+    }
   }
 
   getPeriods(): void {

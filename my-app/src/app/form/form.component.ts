@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// import { PeriodParameters } from '../period-parameters'
 import { Period } from '../periods/shared/period-model';
 
 
@@ -52,17 +51,6 @@ export class FormComponent implements OnInit {
   public periodClassificationSelection: number;
   public compoundFrequencySelection: number;
 
-  // period: PeriodParameters = {
-  //   id: 1,
-  //   initialBalance: 0,
-  //   interestRate: 0.06,
-  //   contributionAmount: 500,
-  //   contributionFrequency: frequencies.monthly,
-  //   periodLength: 2,
-  //   periodClassification: "year(s)",
-  //   compoundFrequency: frequencies.monthly
-  // };
-
   updateContributionFrequency(value) {
     switch (value) {
       case 1:
@@ -112,7 +100,9 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectedPeriod = initializedPeriod
+    if(!this.selectedPeriod) {
+      this.selectedPeriod = initializedPeriod
+    }
 
     // Bind Contribution Frequency Radio
     switch (this.selectedPeriod.periodParameters.contributionFrequency) {

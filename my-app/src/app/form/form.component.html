@@ -1,19 +1,19 @@
-<h3><span>Period {{period.id}}</span> Parameters</h3>
+<h3><span>Period {{selectedPeriod.id}}</span> Parameters</h3>
 
 <form>
   <mat-form-field appearance="fill">
     <mat-label>Inital Balance</mat-label>
-    <input matInput name="initialBalance" [(ngModel)]="period.initialBalance" placeholder="$5,000" required>
+    <input matInput name="initialBalance" [(ngModel)]="selectedPeriod.periodParameters.initialBalance" placeholder="$5,000" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Interest Rate</mat-label>
-    <input matInput name="interestRate" [(ngModel)]="period.interestRate" placeholder="4%" required>
+    <input matInput name="interestRate" [(ngModel)]="selectedPeriod.periodParameters.interestRate" placeholder="4%" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Contributions</mat-label>
-    <input matInput name="contributions" [(ngModel)]="period.contributionAmount" placeholder="$500" required>
+    <input matInput name="contributions" [(ngModel)]="selectedPeriod.periodParameters.contributionAmount" placeholder="$500" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
 
@@ -26,7 +26,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Investment Period</mat-label>
-    <input matInput name="investmentPeriod" [(ngModel)]="period.periodLength" placeholder="5" required>
+    <input matInput name="investmentPeriod" [(ngModel)]="selectedPeriod.periodParameters.periodLength" placeholder="5" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
 
@@ -45,7 +45,3 @@
     <mat-radio-button [value]="4">Yearly</mat-radio-button>
   </mat-radio-group>
 </form>
-
-
-<br>
-<p>Period Object:<br>{{ period | json }}</p>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { PeriodParameters } from '../period-parameters'
+// import { PeriodParameters } from '../period-parameters'
 import { Period } from '../periods/shared/period-model';
 
 
@@ -19,6 +19,27 @@ let periodClassifications = {
   year: "year(s)"
 }
 
+let initializedPeriod: Period = {
+  id: 0,
+    periodParameters: {
+      initialBalance: 0,
+      interestRate: 0.00,
+      contributionAmount: 0,
+      contributionFrequency: frequencies.monthly,
+      periodLength: 0,
+      periodClassification: "year(s)",
+      compoundFrequency: frequencies.monthly
+    },
+    periodResult: {
+      id: 0,
+      initialBalance: 0,
+      rollovers: [],
+      totalContributionsForPeriod: 0,
+      totalInterestEarnedForPeriod: 0,
+      endOfPeriodBalance: 0
+    }
+}
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -31,27 +52,27 @@ export class FormComponent implements OnInit {
   public periodClassificationSelection: number;
   public compoundFrequencySelection: number;
 
-  period: PeriodParameters = {
-    id: 1,
-    initialBalance: 0,
-    interestRate: 0.06,
-    contributionAmount: 500,
-    contributionFrequency: frequencies.monthly,
-    periodLength: 2,
-    periodClassification: "year(s)",
-    compoundFrequency: frequencies.monthly
-  };
+  // period: PeriodParameters = {
+  //   id: 1,
+  //   initialBalance: 0,
+  //   interestRate: 0.06,
+  //   contributionAmount: 500,
+  //   contributionFrequency: frequencies.monthly,
+  //   periodLength: 2,
+  //   periodClassification: "year(s)",
+  //   compoundFrequency: frequencies.monthly
+  // };
 
   updateContributionFrequency(value) {
     switch (value) {
       case 1:
-        this.period.contributionFrequency = frequencies.monthly;
+        this.selectedPeriod.periodParameters.contributionFrequency = frequencies.monthly;
         break;
       case 2:
-        this.period.contributionFrequency = frequencies.quarterly;
+        this.selectedPeriod.periodParameters.contributionFrequency = frequencies.quarterly;
         break;
       case 3:
-        this.period.contributionFrequency = frequencies.yearly;
+        this.selectedPeriod.periodParameters.contributionFrequency = frequencies.yearly;
         break;
     }
   }
@@ -59,13 +80,13 @@ export class FormComponent implements OnInit {
   updatePeriodClassificationSelection(value) {
     switch (value) {
       case 1:
-        this.period.periodClassification = periodClassifications.month;
+        this.selectedPeriod.periodParameters.periodClassification = periodClassifications.month;
         break;
       case 2:
-        this.period.periodClassification = periodClassifications.quarter;
+        this.selectedPeriod.periodParameters.periodClassification = periodClassifications.quarter;
         break;
       case 3:
-        this.period.periodClassification = periodClassifications.year;
+        this.selectedPeriod.periodParameters.periodClassification = periodClassifications.year;
         break;
     }
   }
@@ -73,16 +94,16 @@ export class FormComponent implements OnInit {
   updateCompoundFrequency(value) {
     switch (value) {
       case 1:
-        this.period.compoundFrequency = frequencies.daily;
+        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.daily;
         break;
       case 2:
-        this.period.compoundFrequency = frequencies.monthly;
+        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.monthly;
         break;
       case 3:
-        this.period.compoundFrequency = frequencies.quarterly;
+        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.quarterly;
         break;
       case 4:
-        this.period.compoundFrequency = frequencies.yearly;
+        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.yearly;
         break;
     }
   }
@@ -91,8 +112,10 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.selectedPeriod = initializedPeriod
+
     // Bind Contribution Frequency Radio
-    switch (this.period.contributionFrequency) {
+    switch (this.selectedPeriod.periodParameters.contributionFrequency) {
       case frequencies.monthly:
         this.contributionFrequencySelection = 1;
         break;
@@ -105,7 +128,7 @@ export class FormComponent implements OnInit {
     }
 
     // Bind Period Classificatoin Radio
-    switch (this.period.periodClassification) {
+    switch (this.selectedPeriod.periodParameters.periodClassification) {
       case periodClassifications.month:
         this.periodClassificationSelection = 1;
         break;
@@ -118,7 +141,7 @@ export class FormComponent implements OnInit {
     }
 
     // Bind Compound Frequency Radio
-    switch (this.period.compoundFrequency) {
+    switch (this.selectedPeriod.periodParameters.compoundFrequency) {
       case frequencies.daily:
         this.compoundFrequencySelection = 1;
         break;

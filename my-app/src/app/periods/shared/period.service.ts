@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Period } from './period-model'
+import { Period } from './period.model'
 import { PERIODS } from '../shared/mock-periods'
 
 @Injectable({

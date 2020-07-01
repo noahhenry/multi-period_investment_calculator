@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Period } from '../periods/shared/period-model';
-// import { EventEmitter } from 'protractor';
+import { Period } from '../periods/shared/period.model';
 
 @Component({
   selector: 'app-data-results',

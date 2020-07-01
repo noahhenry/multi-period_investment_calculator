@@ -1,12 +1,5 @@
-import { Period } from './period-model';
-
-// Compounding Frequencies:
-let frequencies = {
-  daily: 365,
-  monthly: 12,
-  quarterly: 4,
-  yearly: 1
-}
+import { Period } from './period.model';
+import { FREQUENCIES } from './compounding-frequencies.model'
 
 export const PERIODS: Period[] = [
   {
@@ -15,10 +8,10 @@ export const PERIODS: Period[] = [
       initialBalance: 0,
       interestRate: 0.08,
       contributionAmount: 2500,
-      contributionFrequency: frequencies.monthly,
+      contributionFrequency: FREQUENCIES.monthly,
       periodLength: 2,
       periodClassification: "year(s)",
-      compoundFrequency: frequencies.monthly
+      compoundFrequency: FREQUENCIES.monthly
     },
     periodResult: {
       id: 1,
@@ -68,10 +61,10 @@ export const PERIODS: Period[] = [
       initialBalance: 65265.194233855094,
       interestRate: 0.08,
       contributionAmount: 4000,
-      contributionFrequency: frequencies.monthly,
+      contributionFrequency: FREQUENCIES.monthly,
       periodLength: 1,
       periodClassification: "year(s)",
-      compoundFrequency: frequencies.quarterly
+      compoundFrequency: FREQUENCIES.quarterly
     },
     periodResult: {
       id: 1,

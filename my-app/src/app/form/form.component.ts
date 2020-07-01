@@ -1,22 +1,8 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 
-import { Period } from '../periods/shared/period-model';
-
-
-// Compounding Frequencies:
-let frequencies = {
-  daily: 365,
-  monthly: 12,
-  quarterly: 4,
-  yearly: 1
-}
-
-// Period Classifications:
-let periodClassifications = {
-  month: "month(s)",
-  quarter: "quarter(s)",
-  year: "year(s)"
-}
+import { Period } from '../periods/shared/period.model';
+import { FREQUENCIES } from '../periods/shared/compounding-frequencies.model'
+import { PERIODCLASSIFICATIONS } from '../periods/shared/period-classifications.model'
 
 let initializedPeriod: Period = {
   id: 0,
@@ -24,10 +10,10 @@ let initializedPeriod: Period = {
       initialBalance: 0,
       interestRate: 0.00,
       contributionAmount: 0,
-      contributionFrequency: frequencies.monthly,
+      contributionFrequency: FREQUENCIES.monthly,
       periodLength: 0,
       periodClassification: "year(s)",
-      compoundFrequency: frequencies.monthly
+      compoundFrequency: FREQUENCIES.monthly
     },
     periodResult: {
       id: 0,
@@ -54,13 +40,13 @@ export class FormComponent implements OnInit {
   updateContributionFrequency(value) {
     switch (value) {
       case 1:
-        this.selectedPeriod.periodParameters.contributionFrequency = frequencies.monthly;
+        this.selectedPeriod.periodParameters.contributionFrequency = FREQUENCIES.monthly;
         break;
       case 2:
-        this.selectedPeriod.periodParameters.contributionFrequency = frequencies.quarterly;
+        this.selectedPeriod.periodParameters.contributionFrequency = FREQUENCIES.quarterly;
         break;
       case 3:
-        this.selectedPeriod.periodParameters.contributionFrequency = frequencies.yearly;
+        this.selectedPeriod.periodParameters.contributionFrequency = FREQUENCIES.yearly;
         break;
     }
   }
@@ -68,13 +54,13 @@ export class FormComponent implements OnInit {
   updatePeriodClassificationSelection(value) {
     switch (value) {
       case 1:
-        this.selectedPeriod.periodParameters.periodClassification = periodClassifications.month;
+        this.selectedPeriod.periodParameters.periodClassification = PERIODCLASSIFICATIONS.month_s;
         break;
       case 2:
-        this.selectedPeriod.periodParameters.periodClassification = periodClassifications.quarter;
+        this.selectedPeriod.periodParameters.periodClassification = PERIODCLASSIFICATIONS.quarter_s;
         break;
       case 3:
-        this.selectedPeriod.periodParameters.periodClassification = periodClassifications.year;
+        this.selectedPeriod.periodParameters.periodClassification = PERIODCLASSIFICATIONS.year_s;
         break;
     }
   }
@@ -82,16 +68,16 @@ export class FormComponent implements OnInit {
   updateCompoundFrequency(value) {
     switch (value) {
       case 1:
-        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.daily;
+        this.selectedPeriod.periodParameters.compoundFrequency = FREQUENCIES.daily;
         break;
       case 2:
-        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.monthly;
+        this.selectedPeriod.periodParameters.compoundFrequency = FREQUENCIES.monthly;
         break;
       case 3:
-        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.quarterly;
+        this.selectedPeriod.periodParameters.compoundFrequency = FREQUENCIES.quarterly;
         break;
       case 4:
-        this.selectedPeriod.periodParameters.compoundFrequency = frequencies.yearly;
+        this.selectedPeriod.periodParameters.compoundFrequency = FREQUENCIES.yearly;
         break;
     }
   }
@@ -103,42 +89,42 @@ export class FormComponent implements OnInit {
 
     // Bind Contribution Frequency Radio
     switch (this.selectedPeriod.periodParameters.contributionFrequency) {
-      case frequencies.monthly:
+      case FREQUENCIES.monthly:
         this.contributionFrequencySelection = 1;
         break;
-      case frequencies.quarterly:
+      case FREQUENCIES.quarterly:
         this.contributionFrequencySelection = 2;
         break;
-      case frequencies.yearly:
+      case FREQUENCIES.yearly:
         this.contributionFrequencySelection = 3;
         break;
     }
 
     // Bind Period Classificatoin Radio
     switch (this.selectedPeriod.periodParameters.periodClassification) {
-      case periodClassifications.month:
+      case PERIODCLASSIFICATIONS.month_s:
         this.periodClassificationSelection = 1;
         break;
-      case periodClassifications.quarter:
+      case PERIODCLASSIFICATIONS.quarter_s:
         this.periodClassificationSelection = 2;
         break;
-      case periodClassifications.year:
+      case PERIODCLASSIFICATIONS.year_s:
         this.periodClassificationSelection = 3;
         break;
     }
 
     // Bind Compound Frequency Radio
     switch (this.selectedPeriod.periodParameters.compoundFrequency) {
-      case frequencies.daily:
+      case FREQUENCIES.daily:
         this.compoundFrequencySelection = 1;
         break;
-      case frequencies.monthly:
+      case FREQUENCIES.monthly:
         this.compoundFrequencySelection = 2;
         break;
-      case frequencies.quarterly:
+      case FREQUENCIES.quarterly:
         this.compoundFrequencySelection = 3;
         break;
-      case frequencies.yearly:
+      case FREQUENCIES.yearly:
         this.compoundFrequencySelection = 4;
         break;
     }

@@ -1,6 +1,6 @@
 <app-data-results [periods]="periods" [(selectedPeriod)]="selectedPeriod"></app-data-results>
 <div class="add-period-button-wrapper">
-  <button mat-fab color="accent" aria-label="Add new period icon button">
+  <button mat-fab color="accent" (click)="createNewPeriod()" aria-label="Add new period icon button">
     <mat-icon>add</mat-icon>
   </button>
 </div>

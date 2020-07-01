@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 
 import { Period } from '../periods/shared/period-model';
 
@@ -96,10 +96,7 @@ export class FormComponent implements OnInit {
     }
   }
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
+  bindToRadioInputs() {
     if(!this.selectedPeriod) {
       this.selectedPeriod = initializedPeriod
     }
@@ -145,6 +142,17 @@ export class FormComponent implements OnInit {
         this.compoundFrequencySelection = 4;
         break;
     }
+  }
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    this.bindToRadioInputs()
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.bindToRadioInputs()
   }
 
 }

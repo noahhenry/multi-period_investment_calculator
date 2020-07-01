@@ -28,8 +28,4 @@ export class PeriodsComponent implements OnInit {
     this.periods = this.periodService.getPeriods()
   }
 
-  onSelect(period: Period): void {
-    this.selectedPeriod = period
-  }
-
 }

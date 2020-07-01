@@ -1,5 +1,7 @@
 import { Period } from './period.model';
 import { FREQUENCIES } from './compounding-frequencies.model'
+import { PERIODCLASSIFICATIONS } from './period-classifications.model'
+
 
 export const PERIODS: Period[] = [
   {
@@ -10,7 +12,7 @@ export const PERIODS: Period[] = [
       contributionAmount: 2500,
       contributionFrequency: FREQUENCIES.monthly,
       periodLength: 2,
-      periodClassification: "year(s)",
+      periodClassification: PERIODCLASSIFICATIONS.year_s,
       compoundFrequency: FREQUENCIES.monthly
     },
     periodResult: {
@@ -63,7 +65,7 @@ export const PERIODS: Period[] = [
       contributionAmount: 4000,
       contributionFrequency: FREQUENCIES.monthly,
       periodLength: 1,
-      periodClassification: "year(s)",
+      periodClassification: PERIODCLASSIFICATIONS.year_s,
       compoundFrequency: FREQUENCIES.quarterly
     },
     periodResult: {

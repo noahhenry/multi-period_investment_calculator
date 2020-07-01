@@ -4,6 +4,7 @@ import { Period } from '../periods/shared/period.model';
 import { FREQUENCIES } from '../periods/shared/compounding-frequencies.model'
 import { PERIODCLASSIFICATIONS } from '../periods/shared/period-classifications.model'
 
+
 let initializedPeriod: Period = {
   id: 0,
     periodParameters: {
@@ -12,7 +13,7 @@ let initializedPeriod: Period = {
       contributionAmount: 0,
       contributionFrequency: FREQUENCIES.monthly,
       periodLength: 0,
-      periodClassification: "year(s)",
+      periodClassification: PERIODCLASSIFICATIONS.year_s,
       compoundFrequency: FREQUENCIES.monthly
     },
     periodResult: {

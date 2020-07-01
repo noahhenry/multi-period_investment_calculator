@@ -1,10 +1,3 @@
-// Period Classifications:
-let periodClassifications = {
-  month: "month(s)",
-  quarter: "quarter(s)",
-  year: "year(s)"
-}
-
 export interface PeriodClassifications {
   month_s: string;
   quarter_s: string;

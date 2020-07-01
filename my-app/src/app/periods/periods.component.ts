@@ -4,6 +4,7 @@ import { Period } from './shared/period.model'
 import { PeriodService } from './shared/period.service'
 
 import { FREQUENCIES } from './shared/compounding-frequencies.model'
+import { PERIODCLASSIFICATIONS } from './shared/period-classifications.model'
 
 @Component({
   selector: 'app-periods',
@@ -32,19 +33,19 @@ export class PeriodsComponent implements OnInit {
   createNewPeriod() {
     console.log("Creating a new Period...")
 
-    let initializedPeriod: Period = {
-      id: 0,
+    let newPeriod: Period = {
+      id: this.periods.length + 1,
         periodParameters: {
           initialBalance: 0,
           interestRate: 0.00,
           contributionAmount: 0,
           contributionFrequency: FREQUENCIES.monthly,
           periodLength: 0,
-          periodClassification: "year(s)",
+          periodClassification: PERIODCLASSIFICATIONS.year_s,
           compoundFrequency: FREQUENCIES.monthly
         },
         periodResult: {
-          id: 0,
+          id: this.periods.length + 1,
           initialBalance: 0,
           rollovers: [],
           totalContributionsForPeriod: 0,

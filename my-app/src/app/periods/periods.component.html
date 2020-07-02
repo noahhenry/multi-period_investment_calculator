@@ -7,4 +7,9 @@
 
 <app-form [selectedPeriod]="selectedPeriod"></app-form>
 
-<p>Selected Period: {{selectedPeriod | json}}</p>
+<p>Selected Period:<br>{{selectedPeriod | json}}</p>
+<br>
+<p>Periods:</p>
+<ul>
+  <li *ngFor="let period of periods">{{period | json}}</li>
+</ul> 

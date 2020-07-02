@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, SimpleChanges, OnChanges } from '@angular/core';
 
 import { Period } from '../periods/shared/period.model';
 import { FREQUENCIES } from '../periods/shared/compounding-frequencies.model'
@@ -31,7 +31,7 @@ let initializedPeriod: Period = {
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnChanges {
   @Input() selectedPeriod: Period;
 
   public contributionFrequencySelection: number;
@@ -132,10 +132,6 @@ export class FormComponent implements OnInit {
   }
 
   constructor() {
-  }
-
-  ngOnInit(): void {
-    this.bindToRadioInputs()
   }
 
   ngOnChanges(changes: SimpleChanges) {

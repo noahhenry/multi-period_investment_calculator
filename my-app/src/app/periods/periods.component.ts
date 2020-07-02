@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Period } from './shared/period.model'
 import { PeriodService } from './shared/period.service'
@@ -22,16 +22,16 @@ export class PeriodsComponent implements OnInit {
     this.getPeriods();
 
     if(this.periods.length) {
-      this.selectedPeriod = this.periods[0]
+      this.selectedPeriod = this.periods[0];
     }
   }
 
   getPeriods(): void {
-    this.periods = this.periodService.getPeriods()
+    this.periods = this.periodService.getPeriods();
   }
 
   createNewPeriod() {
-    console.log("Creating a new Period...")
+    console.log("Creating a new Period...");
 
     let newPeriod: Period = {
       id: this.periods.length + 1,
@@ -53,6 +53,13 @@ export class PeriodsComponent implements OnInit {
           endOfPeriodBalance: 0
         }
     }
+
+    // HACK: needed trigger re-render of 'periods' arr/object in data-results component
+    let tempArr = [].concat(this.periods); // make a copy of the 'periods' array
+    tempArr.push(newPeriod); // add 'newPeriod'
+
+    this.periods = tempArr; // assign 'tempArr' array to 'periods' array
+    this.selectedPeriod = newPeriod;
   }
 
 }

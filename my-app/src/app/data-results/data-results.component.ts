@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 
 import { Period } from '../periods/shared/period.model';
 
@@ -23,6 +23,10 @@ export class DataResultsComponent implements OnInit {
     console.log(period);
     this.selectedPeriod = period;
     this.selectedPeriodChange.emit(period)
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
   }
 
 }

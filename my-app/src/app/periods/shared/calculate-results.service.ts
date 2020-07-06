@@ -73,35 +73,5 @@ export class CalculateResultsService {
 
   }
 
-  // calculateRollovers(compoundFrequency, periodBalance, contributionAmount) {
-    
-  //   let tempRollovers: Rollover = {
-  //     compounds: []
-  //   }
-
-  //   for (let j = 0; j < compoundFrequency; j++) {
-  //     let tempCompound: Compound = {
-  //       contribution: 0,
-  //       interestEarned: 0, 
-  //       balance: 0
-  //     }
-
-  //     let interestEarned = (periodBalance + contributionAmount) * interestRatePerCompound
-  //     totalInterestEarnedForPeriod = totalInterestEarnedForPeriod + interestEarned
-
-  //     periodBalance = periodBalance + periodParameters.contributionAmount + interestEarned
-
-  //     totalContributionsForPeriod = totalContributionsForPeriod + periodParameters.contributionAmount
-
-
-  //   }
-
-  //   return tempRollovers
-  // }
-
-  calculateCompounds() {
-
-  }
-
   constructor() { }
 }

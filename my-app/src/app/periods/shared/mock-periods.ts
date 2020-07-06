@@ -6,6 +6,7 @@ import { PERIODCLASSIFICATIONS } from './period-classifications.model'
 export const PERIODS: Period[] = [
   {
     id: 1,
+    isNew: false,
     periodParameters: {
       initialBalance: 0,
       interestRate: 0.08,
@@ -59,6 +60,7 @@ export const PERIODS: Period[] = [
   },
   {
     id: 2,
+    isNew: false,
     periodParameters: {
       initialBalance: 65265.194233855094,
       interestRate: 0.08,

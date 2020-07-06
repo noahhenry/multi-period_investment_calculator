@@ -1,4 +1,4 @@
-<h3><span>Period {{selectedPeriod.id}}</span> Parameters</h3>
+<h3><span>Period {{selectedPeriod.id}}</span> Parameters <span [ngClass]="selectedPeriod.isNew ? 'new-period-icon' : 'hidden'">NEW</span></h3>
 
 <form>
   <mat-form-field appearance="fill">

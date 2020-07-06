@@ -6,6 +6,18 @@ h3 {
   span {
     font-weight: bold;
   }
+
+  .new-period-icon {
+    font-size: .75em;
+    color: #ffffff;
+    background: #006ED4;
+    padding: .25em;
+    border-radius: 2px;
+  }
+
+  .hidden {
+    display: none;
+  }
 }
 
 form {

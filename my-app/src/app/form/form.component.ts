@@ -1,30 +1,11 @@
 import { Component, Input, SimpleChanges, OnChanges } from '@angular/core';
 
 import { Period } from '../periods/shared/period.model';
+import { INITIALIZEDPERIOD } from '../periods/shared/default-period'
 import { FREQUENCIES } from '../periods/shared/compounding-frequencies.model'
 import { PERIODCLASSIFICATIONS } from '../periods/shared/period-classifications.model'
 
-
-let initializedPeriod: Period = {
-  id: 0,
-    periodParameters: {
-      initialBalance: 0,
-      interestRate: 0.00,
-      contributionAmount: 0,
-      contributionFrequency: FREQUENCIES.monthly,
-      periodLength: 0,
-      periodClassification: PERIODCLASSIFICATIONS.year_s,
-      compoundFrequency: FREQUENCIES.monthly
-    },
-    periodResult: {
-      id: 0,
-      initialBalance: 0,
-      rollovers: [],
-      totalContributionsForPeriod: 0,
-      totalInterestEarnedForPeriod: 0,
-      endOfPeriodBalance: 0
-    }
-}
+let initializedPeriod: Period = INITIALIZEDPERIOD
 
 @Component({
   selector: 'app-form',

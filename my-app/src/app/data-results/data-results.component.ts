@@ -20,7 +20,7 @@ export class DataResultsComponent implements OnInit {
   }
 
   onSelect(period: Period): void {
-    console.log(period);
+    console.log("onSelect()", period);
     this.selectedPeriod = period;
     this.selectedPeriodChange.emit(period)
   }

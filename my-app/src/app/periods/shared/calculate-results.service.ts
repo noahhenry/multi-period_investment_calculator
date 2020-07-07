@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Period } from './period.model'
-import { Rollover, Compound, PeriodResult } from './period-results.model'
+import { PeriodResult, Rollover, Compound } from './period-results.model'
 import { PeriodParameters } from './period-parameters.model';
 
 @Injectable({
@@ -17,6 +17,9 @@ export class CalculateResultsService {
   calculatePeriodResults(period: Period) {
     let periodParameters: PeriodParameters = period.periodParameters
     let periodResult: PeriodResult = period.periodResult
+
+    // clear rollovers arr as to prevent duplicates/storage of old ones
+    periodResult.rollovers = []
 
     let totalContributionsForPeriod = 0
     let totalInterestEarnedForPeriod = 0
@@ -47,10 +50,8 @@ export class CalculateResultsService {
 
         let interestEarned = (periodBalance + contributionAmount) * interestRatePerCompound
         totalInterestEarnedForPeriod = totalInterestEarnedForPeriod + interestEarned
-
-        periodBalance = periodBalance + contributionAmount + interestEarned
-
         totalContributionsForPeriod = totalContributionsForPeriod + contributionAmount
+        periodBalance = periodBalance + contributionAmount + interestEarned
 
         tempCompound.contribution = contributionAmount
         tempCompound.interestEarned = interestEarned
@@ -71,6 +72,8 @@ export class CalculateResultsService {
       this.totalInterestEarned = this.totalInterestEarned + totalInterestEarnedForPeriod
     }
 
+    console.log("Period With Results:", period)
+    return period
   }
 
   constructor() { }

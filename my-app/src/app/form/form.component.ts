@@ -5,6 +5,8 @@ import { INITIALIZEDPERIOD } from '../periods/shared/default-period'
 import { FREQUENCIES } from '../periods/shared/compounding-frequencies.model'
 import { PERIODCLASSIFICATIONS } from '../periods/shared/period-classifications.model'
 
+import { CalculateResultsService } from '../periods/shared/calculate-results.service'
+
 let initializedPeriod: Period = INITIALIZEDPERIOD
 
 @Component({
@@ -112,11 +114,15 @@ export class FormComponent implements OnChanges {
     }
   }
 
-  constructor() {
+  constructor(private calculateResultsService: CalculateResultsService) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
     this.bindToRadioInputs()
+  }
+
+  calculatePeriodResults(period) {
+    this.selectedPeriod = this.calculateResultsService.calculatePeriodResults(period)
   }
 
 }

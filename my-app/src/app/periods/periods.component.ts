@@ -4,9 +4,6 @@ import { Period } from './shared/period.model'
 import { PeriodService } from './shared/period.service'
 import { INITIALIZEDPERIOD } from './shared/default-period'
 
-import { FREQUENCIES } from './shared/compounding-frequencies.model'
-import { PERIODCLASSIFICATIONS } from './shared/period-classifications.model'
-
 @Component({
   selector: 'app-periods',
   templateUrl: './periods.component.html',
@@ -33,10 +30,11 @@ export class PeriodsComponent implements OnInit {
 
   createNewPeriod() {
     console.log("Creating a new Period...");
+    let newPeriodIdValue = this.periods.length + 1
 
-    let newPeriod: Period = INITIALIZEDPERIOD
-    newPeriod.id = this.periods.length + 1
-    newPeriod.periodResult.id = this.periods.length + 1
+    let newPeriod: Period = Object.assign({}, INITIALIZEDPERIOD)
+    newPeriod.id = newPeriodIdValue
+    newPeriod.periodResult.id = newPeriodIdValue
 
     // HACK: needed trigger re-render of 'periods' arr/object in data-results component
     let tempArr = [].concat(this.periods); // make a copy of the 'periods' array

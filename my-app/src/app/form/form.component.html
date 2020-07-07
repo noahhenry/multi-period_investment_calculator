@@ -3,17 +3,17 @@
 <form>
   <mat-form-field appearance="fill">
     <mat-label>Inital Balance</mat-label>
-    <input matInput name="initialBalance" [(ngModel)]="selectedPeriod.periodParameters.initialBalance" placeholder="$5,000" required>
+    <input matInput type="number" name="initialBalance" [(ngModel)]="selectedPeriod.periodParameters.initialBalance" placeholder="$5,000" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Interest Rate</mat-label>
-    <input matInput name="interestRate" [(ngModel)]="selectedPeriod.periodParameters.interestRate" placeholder="4%" required>
+    <input matInput type="number" name="interestRate" [(ngModel)]="selectedPeriod.periodParameters.interestRate" placeholder="4%" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Contributions</mat-label>
-    <input matInput name="contributions" [(ngModel)]="selectedPeriod.periodParameters.contributionAmount" placeholder="$500" required>
+    <input matInput type="number" name="contributions" [(ngModel)]="selectedPeriod.periodParameters.contributionAmount" placeholder="$500" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
 
@@ -26,7 +26,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Investment Period</mat-label>
-    <input matInput name="investmentPeriod" [(ngModel)]="selectedPeriod.periodParameters.periodLength" placeholder="5" required>
+    <input matInput type="number" name="investmentPeriod" [(ngModel)]="selectedPeriod.periodParameters.periodLength" placeholder="5" required>
     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
   </mat-form-field>
 
@@ -45,3 +45,7 @@
     <mat-radio-button [value]="4">Yearly</mat-radio-button>
   </mat-radio-group>
 </form>
+
+<div class="calculate-button-wrapper">
+  <button mat-button color="primary" (click)="calculatePeriodResults(selectedPeriod)">Calculate</button>
+</div>

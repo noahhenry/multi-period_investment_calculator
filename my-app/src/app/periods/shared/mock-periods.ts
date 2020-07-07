@@ -71,7 +71,7 @@ export const PERIODS: Period[] = [
       compoundFrequency: FREQUENCIES.quarterly
     },
     periodResult: {
-      id: 1,
+      id: 2,
       initialBalance: 65265.194233855094,
       rollovers: [
         {

@@ -7,3 +7,4 @@ export interface Period {
   periodParameters: PeriodParameters;
   periodResult: PeriodResult;
 }
+

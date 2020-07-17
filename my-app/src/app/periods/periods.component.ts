@@ -32,9 +32,11 @@ export class PeriodsComponent implements OnInit {
     console.log("Creating a new Period...");
     let newPeriodIdValue = this.periods.length + 1
 
-    let newPeriod: Period = Object.assign({}, INITIALIZEDPERIOD)
+    let newPeriod: Period = Object.assign({}, INITIALIZEDPERIOD) // ! Maybe source of INITIALIZEDPERIOD getting over written?
+    console.log("newPeriod:", newPeriod)
     newPeriod.id = newPeriodIdValue
     newPeriod.periodResult.id = newPeriodIdValue
+    console.log("newPeriod Modified:", newPeriod)
 
     // HACK: needed trigger re-render of 'periods' arr/object in data-results component
     let tempArr = [].concat(this.periods); // make a copy of the 'periods' array

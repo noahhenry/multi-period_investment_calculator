@@ -1,4 +1,4 @@
-Project Link: https://noahhenry.github.io/multi-period_investment_calculator/
+Project Link: https://noahhenry.github.io/multi-period_investment_calculator/my-app
 
 # Multi-period Investment Calculator
 Help estimate the value of investment accounts with contributions and compound interest over a period of time or multiple periods.

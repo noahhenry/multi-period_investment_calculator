@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod && angular-cli-ghpages --branch gh-pages"
+    "deploy": "ng build --prod --base-href /multi-period_investment_calculator/my-app/ && angular-cli-ghpages --branch gh-pages"
   },
   "private": true,
   "dependencies": {

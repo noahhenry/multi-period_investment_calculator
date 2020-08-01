@@ -1,17 +1,17 @@
-export interface Compound {
+export interface CompoundInterface {
   contribution: number;
   interestEarned: number;
   balance: number;
 }
 
-export interface Rollover {
-  compounds: Compound[];
+export interface RolloverInterface {
+  compounds: CompoundInterface[];
 }
 
-export interface PeriodResult {
+export interface PeriodResultInterface {
   id: number;
   initialBalance: number;
-  rollovers: Rollover[];
+  rollovers: RolloverInterface[];
   totalContributionsForPeriod: number;
   totalInterestEarnedForPeriod: number;
   endOfPeriodBalance: number;
